@@ -40,3 +40,10 @@
 										</div>
 									</div>
 									</div>
+
+
+
+									<option value="" selected="selected"> - seleccione rol - </option>
+        <!--<option value="admin">Admin</option>-->
+        <option value="personal">Personal</option>
+        <option value="usuarios">Usuarios</option>

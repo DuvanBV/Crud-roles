@@ -7,17 +7,12 @@
             <div class="card-header bg-primary text-white"><h1>Agregar nuevo rol</h1></div>
                 <div class="card-body bg-light">
                     <div class="container mt-5">
-                        <form action="updateadmin.php" method="POST">
+                        <form action="insertarrol.php" method="POST">
                                     <input type="hidden" name="id" value="<?php echo $row['id']  ?>">
-                                    <label for="">Usuario</label>
-                                    <input type="text" class="form-control mb-3" name="username" placeholder="username" value="<?php echo $row['username']  ?>">
-                                    <label for="">Email</label>
-                                    <input type="text" class="form-control mb-3" name="email" placeholder="email" value="<?php echo $row['email']  ?>">
-                                    <label for="">Rol</label>
-                                    <input type="text" class="form-control mb-3" name="role" placeholder="role" value="<?php echo $row['role']  ?>">
+                                    <input type="text" class="form-control mb-3" name="nombre_rol" placeholder="Ingrese nombre del rol" value="">
                                     <br>
                                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                                    <input type="submit" class="btn btn-outline-primary" value="Actualizar" id="<?php echo $row['id']  ?>">
+                                    <input type="submit" class="btn btn-outline-primary" value="Agregar" id="">
                         </form> 
                     </div>
                 </div>

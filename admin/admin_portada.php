@@ -86,6 +86,15 @@
 				</h3>
 					
 			</center>
+            <div class="botonrol">
+								<!-- boton para abrir el modal de crear rol -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalaggrol">
+								Agregar rol +
+								</button>
+                                <?php include("modalroladmin.php");?>
+
+							
+							</div>
 			
 		</div>
 		<div class="container mt-5">
@@ -97,15 +106,6 @@
                                    <?php include ("../formregistroadmin.php")?>
                                 </div>
                             </div>
-                            <div class="botonrol">
-								<!-- boton para abrir el modal de crear rol -->
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalaggrol">
-								Agregar rol +
-								</button>
-
-							
-							</div>
-                              
                         </div>
 
                         <div class="col-md-8">    
