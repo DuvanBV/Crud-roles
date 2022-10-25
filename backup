@@ -1,0 +1,42 @@
+ <form action="insertar.php" method="POST"> 
+                                        <input type="text" class="form-control mb-3" name="username" placeholder="username">
+                                        <input type="text" class="form-control mb-3" name="email" placeholder="email">
+                                       <!--  <input type="text" class="form-control mb-3" > -->
+										<div class="form-group">
+											<select class="form-control" id="sel1" name="role" placeholder="role">
+												<option value="Admin">Admin</option>
+												<option value="Personal">Personal</option>
+												<option value="Usuario">Usuario</option>
+											</select>
+										</div>
+                                        <input type="submit" class="btn btn-outline-primary btn-block">
+                                    </form>
+
+
+
+
+
+										<!-- The Modal -->
+								<div class="modal" id="myModal">
+									<div class="modal-dialog">
+										<div class="modal-content">
+	
+										<!-- Modal Header -->
+										<div class="modal-header">
+											<h4 class="modal-title">Modal Heading</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										</div>
+	
+										<!-- Modal body -->
+										<div class="modal-body">
+											Modal body..
+										</div>
+	
+										<!-- Modal footer -->
+										<div class="modal-footer">
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+										</div>
+	
+										</div>
+									</div>
+									</div>
