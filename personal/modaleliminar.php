@@ -11,7 +11,7 @@
             </div> -->
             <div class="modal-body">
                 <div class="card">
-                    <div class="card-header bg-primary text-white"><h1>Eliminar datos de <?php echo $row['username'] ?> </h1></div>
+                    <div class="card-header text-white"  style="background-color: #251B37;"><h1>Eliminar datos de <?php echo $row['username'] ?> </h1></div>
                         <div class="card-body bg-light">
                          ¿Estas seguro que deseas eliminar a <?php  echo $row['username']?> ?
                         </div>

@@ -109,21 +109,28 @@ if(isset($_REQUEST['btn_register'])) //compruebe el nombre del botón "btn_regis
 <input type="password" name="txt_password" class="form-control" placeholder="Contraseña" />
 </div>
 </div>
-    
+
+<?php
+
+$sql="SELECT *  FROM roles WHERE rol NOT IN ('admin')";
+$query=mysqli_query($con,$sql);
+
+?>
+
 <div class="form-group">
     <div class="col-sm-12">
     <select class="form-control" name="txt_role">
         <option value="" selected="selected"> - Rol - </option>
-        <!--<option value="admin">Admin</option>-->
-        <option value="personal">Personal</option>
-        <option value="usuarios">Usuarios</option>
+		<?php foreach ($query as $resultado) { ?>
+			<option value="personal"><?php echo $resultado['rol']; ?></option>
+		<?php } ?>
     </select>
     </div>
 </div>
 
 <div class="form-group">
 <div class="col-sm-12">
-<input type="submit" name="btn_register" class="btn btn-primary btn-block" value="Registro">
+<input type="submit" name="btn_register" class="btn btn-warning btn-block" value="Registro">
 <!--<a href="index.php" class="btn btn-danger">Cancel</a>-->
 </div>
 </div>

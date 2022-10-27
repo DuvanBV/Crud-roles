@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-body">
             <div class="card">
-            <div class="card-header bg-primary text-white"><h1>Actualizar datos de <?php echo $row['username'] ?> </h1></div>
+            <div class="card-header text-white"  style="background-color: #251B37;"><h1>Actualizar datos de <?php echo $row['username'] ?> </h1></div>
                 <div class="card-body bg-light">
                     <div class="container mt-5">
                         <form action="updateadmin.php" method="POST">
@@ -17,7 +17,7 @@
                                     <input type="text" class="form-control mb-3" name="role" placeholder="role" value="<?php echo $row['role']  ?>">
                                     <br>
                                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                                    <input type="submit" class="btn btn-outline-primary" value="Actualizar" id="<?php echo $row['id']  ?>">
+                                    <input type="submit" class="btn btn-outline-warning" value="Actualizar" id="<?php echo $row['id']  ?>">
                         </form> 
                     </div>
                 </div>

@@ -20,6 +20,10 @@
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/853c6b208c.js" crossorigin="anonymous"></script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
 <style type="text/css">
 	.login-form {
 		width: 340px;
@@ -42,6 +46,12 @@
         font-size: 15px;
         font-weight: bold;
     }
+    body{
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/fondo3.jpg);
+	background-position: center;
+	background-size: 100%;
+    font-family: 'Lato', sans-serif;
+}
 </style>
 </head>
 	<body>
@@ -54,9 +64,9 @@
 		<div class="col-lg-12">
 		 
 			<center>
-				<h1>Pagina Administrativa</h1>
+				<h1 class="text-white">Pagina Administrativa</h1>
 				
-				<h3>
+				<h3 class="text-white">
 				<?php
 				session_start();
 
@@ -88,7 +98,7 @@
 			</center>
             <div class="botonrol">
 								<!-- boton para abrir el modal de crear rol -->
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalaggrol">
+								<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalaggrol">
 								Agregar rol +
 								</button>
                                 <?php include("modalroladmin.php");?>
@@ -100,8 +110,8 @@
 		<div class="container mt-5">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header bg-primary text-white"><h1>Añadir usuario</h1></div>
+                            <div class="card" style="box-shadow: 0 0 50px rgb(25, 25, 1);">
+                                <div class="card-header  text-white" style="background-color: #251B37;"><h1>Añadir usuario</h1></div>
                                 <div class="card-body bg-light">
                                    <?php include ("../formregistroadmin.php")?>
                                 </div>
@@ -109,15 +119,15 @@
                         </div>
 
                         <div class="col-md-8">    
-                            <div class="card">
-                                <div class="card-header bg-primary text-white">
+                            <div class="card" style="box-shadow: 0 0 50px rgb(25, 25, 1);">
+                                <div class="card-header text-white" style="background-color: #251B37;">
                                     <h1 class="titulo">Usuarios</h1>
                                 </div>
                                 <div class="card-body bg-light">
                                     <div class="container ">
                                         
                                         <table id="table_id" class="display ">
-                                            <thead class="table-primary table-striped bg-primary  text-white" >
+                                            <thead class="table-primary table-striped   text-white" style="background-color: #251B37;" >
                                                 <tr>
 												<th width="4%">ID</th>
 												<th width="18%">Usuario</th>
