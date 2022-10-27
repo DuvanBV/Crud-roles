@@ -1,3 +1,12 @@
+<?php 
+    include("personal/conexion.php");
+    $con=conectar();
+
+    $sql="SELECT *  FROM roles";
+    $query=mysqli_query($con,$sql);
+
+    /* $row=mysqli_fetch_array($query); */
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,18 +15,18 @@
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
 <title>Multiusuarios PHP MySQL: Niveles de Usuarios</title>
 		
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<script src="js/jquery-1.12.4-jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- Boostrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 <style type="text/css">
 	.login-form {
 		width: 340px;
     	margin: 20px auto;
 	}
     .login-form form {
-    	margin-bottom: 15px;
-        background: #f7f7f7;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
         padding: 30px;
     }
     .login-form h2 {
@@ -31,6 +40,10 @@
         font-size: 15px;
         font-weight: bold;
     }
+	::-webkit-input-placeholder {
+  text-align: center;
+  line-height: 100px;/* Centrado vertical */
+}
 </style>
 </head>
 	<body>
@@ -170,49 +183,55 @@ include("header.php");
 		}
 		?> 
 
-
-<div class="login-form">
-<center><h2>Iniciar sesión</h2></center>
-<form method="post" class="form-horizontal">
-  <div class="form-group">
-  <label class="col-sm-6 text-left">Email</label>
-  <div class="col-sm-12">
-  <input type="text" name="txt_email" class="form-control" placeholder="Ingrese email" />
-  </div>
-  </div>
-      
-  <div class="form-group">
-  <label class="col-sm-6 text-left">Password</label>
-  <div class="col-sm-12">
-  <input type="password" name="txt_password" class="form-control" placeholder="Ingrese passowrd" />
-  </div>
-  </div>
-      
-  <div class="form-group">
-      <label class="col-sm-6 text-left">Seleccionar rol</label>
-      <div class="col-sm-12">
-      <select class="form-control" name="txt_role">
-          <option value="" selected="selected"> - selecccionar rol - </option>
-          <option value="admin">Admin</option>
-          <option value="personal">Personal</option>
-          <option value="usuarios">Usuarios</option>
-      </select>
-      </div>
-  </div>
-  
-  <div class="form-group">
-  <div class="col-sm-12">
-  <input type="submit" name="btn_login" class="btn btn-success btn-block" value="Iniciar Sesion">
-  </div>
-  </div>
-  
-  <div class="form-group">
-  <div class="col-sm-12">
-  ¿No tienes una cuenta? <a href="registro.php"><p class="text-info">Registrar Cuenta</p></a>		
-  </div>
-  </div>
-      
-</form>
+<br><br><br>
+<div class="login-form bg-light">
+	<div class="card">
+		<div class="card-header bg-primary text-white">
+			<center><h2>Iniciar sesión</h2></center>
+		</div>
+		<div class="card-body text-center bg-light">
+			<form method="post">
+			<div class="form-group">
+			<div class="col-sm-12">
+			<input type="text" name="txt_email" class="form-control" placeholder="Email" />
+			</div>
+			</div>
+				
+			<div class="form-group">
+			<div class="col-sm-12">
+			<input type="password" name="txt_password" class="form-control" placeholder="Contraseña" />
+			</div>
+			</div>
+				
+			<div class="form-group">
+				<div class="col-sm-12">
+				<select class="form-control" name="txt_role">
+					<option value="" selected="selected"> - selecccionar rol - </option>
+					<!-- <option value="admin">Admin</option>
+					<option value="personal">Personal</option>
+					<option value="usuarios">Usuarios</option> -->
+					<?php while($row=mysqli_fetch_array($query)){ ?>
+						<option value="<?php  echo $row['rol']?>"><?php  echo $row['rol']?></option>
+						<?php }?>
+				</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+			<div class="col-sm-12">
+			<input type="submit" name="btn_login" class="btn btn-outline-primary" value="Iniciar Sesion">
+			</div>
+			</div>
+			
+			<div class="form-group">
+			<div class="col-sm-12">
+			¿No tienes una cuenta? <a href="registro.php"><p class="text-info">Registrar Cuenta</p></a>		
+			</div>
+			</div>
+				
+			</form>
+		</div>
+	</div>
 </div>
 <!--Cierra div login-->
 		</div>

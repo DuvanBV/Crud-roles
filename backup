@@ -1,49 +1,44 @@
- <form action="insertar.php" method="POST"> 
-                                        <input type="text" class="form-control mb-3" name="username" placeholder="username">
-                                        <input type="text" class="form-control mb-3" name="email" placeholder="email">
-                                       <!--  <input type="text" class="form-control mb-3" > -->
-										<div class="form-group">
-											<select class="form-control" id="sel1" name="role" placeholder="role">
-												<option value="Admin">Admin</option>
-												<option value="Personal">Personal</option>
-												<option value="Usuario">Usuario</option>
-											</select>
-										</div>
-                                        <input type="submit" class="btn btn-outline-primary btn-block">
-                                    </form>
-
-
-
-
-
-										<!-- The Modal -->
-								<div class="modal" id="myModal">
-									<div class="modal-dialog">
-										<div class="modal-content">
-	
-										<!-- Modal Header -->
-										<div class="modal-header">
-											<h4 class="modal-title">Modal Heading</h4>
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-										</div>
-	
-										<!-- Modal body -->
-										<div class="modal-body">
-											Modal body..
-										</div>
-	
-										<!-- Modal footer -->
-										<div class="modal-footer">
-											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-										</div>
-	
-										</div>
-									</div>
-									</div>
-
-
-
-									<option value="" selected="selected"> - seleccione rol - </option>
-        <!--<option value="admin">Admin</option>-->
-        <option value="personal">Personal</option>
-        <option value="usuarios">Usuarios</option>
+<center><h2>Iniciar sesión</h2></center>
+<form method="post" class="form-horizontal">
+  <div class="form-group">
+  <label class="col-sm-6 text-left">Email</label>
+  <div class="col-sm-12">
+  <input type="text" name="txt_email" class="form-control" placeholder="Ingrese email" />
+  </div>
+  </div>
+      
+  <div class="form-group">
+  <label class="col-sm-6 text-left">Password</label>
+  <div class="col-sm-12">
+  <input type="password" name="txt_password" class="form-control" placeholder="Ingrese passowrd" />
+  </div>
+  </div>
+      
+  <div class="form-group">
+      <label class="col-sm-6 text-left">Seleccionar rol</label>
+      <div class="col-sm-12">
+      <select class="form-control" name="txt_role">
+          <option value="" selected="selected"> - selecccionar rol - </option>
+          <!-- <option value="admin">Admin</option>
+          <option value="personal">Personal</option>
+          <option value="usuarios">Usuarios</option> -->
+		  <?php while($row=mysqli_fetch_array($query)){ ?>
+			<option value="<?php  echo $row['rol']?>"><?php  echo $row['rol']?></option>
+			<?php }?>
+      </select>
+      </div>
+  </div>
+  
+  <div class="form-group">
+  <div class="col-sm-12">
+  <input type="submit" name="btn_login" class="btn btn-success btn-block" value="Iniciar Sesion">
+  </div>
+  </div>
+  
+  <div class="form-group">
+  <div class="col-sm-12">
+  ¿No tienes una cuenta? <a href="registro.php"><p class="text-info">Registrar Cuenta</p></a>		
+  </div>
+  </div>
+      
+</form>
